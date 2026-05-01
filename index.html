@@ -3,10 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my first github project</title>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p>hello world</p>
-    <h1>this is main chenge</h1>
+    <main class="app">
+        <header>
+            <h1>Todo List</h1>
+            <p class="subtitle">Plan the day, check things off, keep moving.</p>
+        </header>
+
+        <form class="todo-form" id="todoForm">
+            <input
+                class="todo-input"
+                id="todoInput"
+                type="text"
+                placeholder="Add a new task..."
+                autocomplete="off"
+                aria-label="New task"
+            >
+            <button class="add-btn" type="submit">Add</button>
+        </form>
+
+        <section class="toolbar" aria-label="Todo controls">
+            <div class="filters" role="group" aria-label="Filter tasks">
+                <button class="filter-btn active" type="button" data-filter="all">All</button>
+                <button class="filter-btn" type="button" data-filter="active">Active</button>
+                <button class="filter-btn" type="button" data-filter="completed">Done</button>
+            </div>
+            <button class="clear-btn" id="clearCompleted" type="button">Clear Done</button>
+        </section>
+
+        <ul class="todo-list" id="todoList"></ul>
+        <p class="empty-state" id="emptyState">No tasks yet. Add one above.</p>
+        <footer class="summary" id="summary">0 tasks left</footer>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
